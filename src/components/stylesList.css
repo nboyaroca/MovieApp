@@ -1,0 +1,17 @@
+
+
+.film-list{
+    background-color: rgb(98, 132, 162);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 70vh;
+    overflow-y: scroll;
+}
+
+@media screen and (max-width: 415px){
+    .film-list{
+        width: 80%;
+        margin: 0 auto;
+    }
+}
