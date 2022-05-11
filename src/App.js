@@ -1,4 +1,4 @@
-import { MovieList } from './components/MovieList';
+import { MovieList } from './components/cardS/MovieList';
 import './components/main.css';
 
 function App() {

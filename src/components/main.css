@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@100;300;400;500;700;900&display=swap');
-@import url(./stylesCard.css);
-@import url(./stylesList.css);
+@import url(./card/stylesCard.css);
+@import url(./cardS/stylesList.css);
+@import url(./form/stylesForm.css);
 
 
 *{
