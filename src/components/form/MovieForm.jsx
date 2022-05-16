@@ -39,7 +39,7 @@ export class MovieForm extends Component {
                     <input type="text" id='imgUrl' placeholder="Image URL"/>  
                 </div>
                 
-                <button type="submit" className="btnForm">Add Your Movie</button>
+                <button type="submit" className="submit" id="submit">Add Your Movie</button>
             </form>
         )
     }

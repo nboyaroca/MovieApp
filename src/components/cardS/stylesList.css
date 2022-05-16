@@ -1,12 +1,18 @@
-
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400);
 
 .film-list{
-    background-color: rgb(98, 132, 162);
+    background-color: #c4c1bd;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    height: 70vh;
-    overflow-y: scroll;
+    /*height: 70vh;
+    overflow-y: scroll;*/
+}
+
+.add-button{
+    width: 100%;
+    color: #726659;
+    font-family: 'lato';
 }
 
 @media screen and (max-width: 415px){

@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { MovieForm } from "../form/MovieForm";
 
 export class MovieCard extends Component {
     
@@ -15,10 +16,12 @@ export class MovieCard extends Component {
                         <p className="genre">{movie.genre}</p>
                         <h3 className="year">{movie.year}</h3>
                     </div>
-                    <button
-                    onClick={() => this.props.deleteMovie(movie.id)}
-                    className="btn btn-danger">delete</button>
-                    <p className="diamond">💎</p>
+                    <div className="buttons">
+                        <button className="card-button"
+                        onClick={() => this.props.deleteMovie(movie.id)}>delete</button>
+                        <button className="card-button"
+                        onClick={() => this.props.editMovie(movie.id)}>change</button>
+                    </div>
                 </div>
             </div>
         );

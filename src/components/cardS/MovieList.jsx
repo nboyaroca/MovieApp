@@ -7,6 +7,7 @@ export class MovieList extends Component {
     constructor() {
         super();
         this.state={
+            viewForm: false,
             movies: [
                 {
                     id: 1,
@@ -69,20 +70,6 @@ export class MovieList extends Component {
                     year: 1990,
                     imgUrl: 'https://www.ecartelera.com/carteles/4800/4849/001.jpg',
                 },
-                {
-                    id: 9,
-                    title: 'Lost in Translation',
-                    genre: 'Drama',
-                    year: 2003,
-                    imgUrl: 'https://www.phenomena-experience.com/galeria/Febrero_2017/lost-in-translation-poster.jpg',
-                },
-                {
-                    id: 10,
-                    title: 'Star Wars, a new hope',
-                    genre: 'Science-fiction',
-                    year: 1977,
-                    imgUrl: 'https://castwars.com/wp-content/uploads/2015/08/star-wars-iv-a-new-hope-poster1.jpg',
-                },
             ],
         };
     };
@@ -94,28 +81,30 @@ export class MovieList extends Component {
         this.setState({ movies: filterMovies });
     };
 
-    /*addMovie = (data) => {
-        let lastIndex = this.state.movies[this.state.movies.length-1].id;
-        console.log(lastIndex);
-        let newIndex = lastIndex+1;
-        let newMovie = {id: newIndex, ...data}
-        console.log(newMovie);
-        this.setState({movies:[...this.state.movies, newMovie]});
-    }*/
+    editMovie = (id) => {
+        this.openForm();
+        let editedMovie = this.state.movies.find(movie => movie.id ===id);
+        //return editedMovie;
+        console.log(editedMovie);
+    }
 
     addMovie = (data) => {
         data.id = createUuid();
         this.setState({ movies: [...this.state.movies, data] })
     }
 
+    openForm = () => {
+        this.setState({ viewForm: true});
+    }
+
     render() {
         return (
             <section>
-                <MovieForm addMovie={this.addMovie}/>
+                <button onClick={ this.openForm } className="add-button"> Add A Film By Yourself, Click Here! </button>
+                {this.state.viewForm ? <MovieForm addMovie={this.addMovie}/> : ''}
                 <div className="film-list">
                     {this.state.movies.map((movie, key) => (
-                        <MovieCard key={key} movie={movie} deleteMovie={this.deleteMovie}/>
-                        
+                    <MovieCard key={key} movie={movie} deleteMovie={this.deleteMovie} editMovie={this.editMovie}/>     
                     ))}
                 </div>
             </section>
