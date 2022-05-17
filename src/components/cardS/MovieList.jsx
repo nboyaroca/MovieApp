@@ -94,7 +94,7 @@ export class MovieList extends Component {
     }
 
     openForm = () => {
-        this.setState({ viewForm: true});
+        this.setState(prevState => ({ viewForm: !prevState.viewForm}));
     }
 
     render() {
