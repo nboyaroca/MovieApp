@@ -1,3 +1,7 @@
+MOVIE APP . Your favourite films list, you can edit the list, add cards or delete.
+
+Working with components, the list component "cardS", each card with the film information and picture "card" and the form to insert or change films.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
