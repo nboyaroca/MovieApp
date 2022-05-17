@@ -33,6 +33,7 @@ export class MovieList extends Component {
         //return editedMovie;
         console.log(editedMovie);
         this.setState({editedMovie})
+        this.setState({isEditMode: true})
     }
 
     addMovie = (data) => {
@@ -47,8 +48,8 @@ export class MovieList extends Component {
     render() {
         return (
             <section>
-                <button onClick={ this.openForm } className="add-button"> Add A Film By Yourself, Click Here! </button>
-                {this.state.viewForm ? <MovieForm addMovie={this.addMovie} editedMovie={this.state.editedMovie}/> : ''}
+                <button onClick={ this.openForm } className="add-button"> Add A Film By Yourself,  Click Here! </button>
+                {this.state.viewForm ? <MovieForm addMovie={this.addMovie} editedMovie={this.state.editedMovie} isEditMode={this.state.isEditMode}/> : ''}
                 <div className="film-list">
                     {this.state.movies.map((movie, key) => (
                     <MovieCard key={key} movie={movie}
