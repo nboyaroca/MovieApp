@@ -4,9 +4,12 @@ import { Component } from "react";
 export class MovieForm extends Component {
     constructor(props) {
         super(props);
+        this.state={
+            newMovie: this.props.editedMovie,
+        }
     }
 
-    emptyInput = () => {
+    inputChange = () => {
     }
 
     onSubmitHandler = (e) => {
@@ -28,15 +31,15 @@ export class MovieForm extends Component {
         e.target.year.value = "";
         e.target.imgUrl.value = "";
     };   
-    
+
     render() {
         return(
             <form onSubmit={this.onSubmitHandler} className="form">
                 <div className="inputForm">
-                    <input type="text" id='title' placeholder="Title"/>
-                    <input type="text" id='genre' placeholder="Genre"/>
-                    <input type="text" id='year' placeholder="Year"/>
-                    <input type="text" id='imgUrl' placeholder="Image URL"/>  
+                    <input type="text" id='title' value={this.props.editedMovie.title} placeholder="Title"/>
+                    <input type="text" id='genre' value={this.props.editedMovie.genre} placeholder="Genre"/>
+                    <input type="text" id='year' value={this.props.editedMovie.year} placeholder="Year"/>
+                    <input type="text" id='imgUrl' value={this.props.editedMovie.imgUrl} placeholder="Image URL"/>  
                 </div>
                 
                 <button type="submit" className="submit" id="submit">Add Your Movie</button>
