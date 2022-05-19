@@ -1,8 +1,8 @@
 import { Component } from "react";
-import { MovieForm } from "../form/MovieForm";
+//import { MovieForm } from "../form/MovieForm";
 
 export class MovieCard extends Component {
-    
+
     render() {
         let movie = this.props.movie;
         return (
