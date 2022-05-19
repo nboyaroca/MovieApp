@@ -11,8 +11,8 @@ export class MovieForm extends Component {
     }
 
     onInputChange = (e) => {
-        const name = e.target.name;
-        const value = e.target.value;
+        let name = e.target.name;
+        let value = e.target.value;
         console.log(name)
         this.setState({newMovie: {...this.state.newMovie, [name]:value}});
     };
@@ -25,13 +25,13 @@ export class MovieForm extends Component {
         this.props.addMovie(this.state.newMovie) //this.state.newMovie representa "data" de la funció addMovie
         : this.props.updateMovie(this.state.newMovie)
                 
-        this.resetInputsForm(e);
+        this.props.resetInputsForm(e);
     };
 
     //Extract To Method
-    resetInputsForm = (e) => {
-        this.setState({newMovie: {id:"", title:"", genre:"", year:"", imgUrl:""}})
-    };   
+    // resetInputsForm = (e) => {
+    //     this.setState({newMovie: {id:"", title:"", genre:"", year:"", imgUrl:""}})
+    // };   
 
     render() {
         return(
