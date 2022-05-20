@@ -39,7 +39,7 @@ export class MovieList extends Component {
 
     editMovie = (id) => {
         this.openForm();
-        let editedMovie = this.state.movies.find(movie => movie.id ===id);
+        let editedMovie = this.state.movies.find(movie => movie.id === id);
         //return editedMovie;
         console.log(editedMovie);
         this.setState({editedMovie})
@@ -47,14 +47,15 @@ export class MovieList extends Component {
     }
 
     updateMovie = (newMovie) => {
-        console.log(newMovie)
-        let newMoviesState = this.state.movies //fem un nou array com l'original
-        let movieToEditIndex = newMoviesState.findIndex(movie => movie.id === newMovie.id); //busquem l'index que sigui igual al que volem canviar
-        newMoviesState[movieToEditIndex] = newMovie
-        this.setState({movies: newMoviesState})
-        this.openForm()
-        this.resetInputsForm()
-        this.setState({isEditMode: false})
+        movieServices.updateMovie(newMovie.id, {newMovie}).then((res) => {
+            let newMoviesState = this.state.movies //fem un nou array com l'original
+            let movieToEditIndex = newMoviesState.findIndex(movie => movie.id === newMovie.id); //busquem l'index que sigui igual al que volem canviar
+            newMoviesState[movieToEditIndex] = newMovie //del la nova llista newMoviesState busquem l'index [movieToEditIndex] i li diem que és newMovie
+            this.setState({movies: newMoviesState})
+            this.openForm()
+            this.resetInputsForm()
+            this.setState({isEditMode: false})
+        })
     }
 
     addMovie = (data) => {

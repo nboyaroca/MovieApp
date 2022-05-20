@@ -7,21 +7,21 @@ export const movieServices = {
         const movies = axios.get(baseUrl + "/movies").then( (res) => {
             return res.data;
         });
-        console.log("service what?")
-
         return movies;
     },
 
     deleteMovie(id) {
-        const deletedMovie = axios.delete(baseUrl + "/movies/" + id) ;
-
+        const deletedMovie = axios.delete(baseUrl + "/movies/" + id);
         return deletedMovie;
     },
 
     addMovie(data) {
-        const addedMovie = axios.post(baseUrl + "/movies/", data) ;
-
+        const addedMovie = axios.post(baseUrl + "/movies/", data);
         return addedMovie;
     },
-    
+
+    updateMovie(id, {newMovie}) {
+        const updatedMovie = axios.put(baseUrl + "/movies/" + id, {newMovie});
+        return updatedMovie;
+    }
 };

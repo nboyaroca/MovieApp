@@ -1,5 +1,6 @@
 //import { render } from "@testing-library/react";
 import { Component } from "react";
+import { movieServices } from "../../services/movieServices";
 
 export class MovieForm extends Component {
     constructor(props) {
@@ -15,15 +16,14 @@ export class MovieForm extends Component {
         let value = e.target.value;
         console.log(name)
         this.setState({newMovie: {...this.state.newMovie, [name]:value}});
-    };
-
+    }
 
     onSubmitHandler = (e) => {
         e.preventDefault();
         
         !this.state.isEditMode ? 
         this.props.addMovie(this.state.newMovie) //this.state.newMovie representa "data" de la funció addMovie
-        : this.props.updateMovie(this.state.newMovie)
+        : this.props.updateMovie(this.state.newMovie) //this.state.newMovie és "newMovie" de la funció updateMovie
                 
         this.props.resetInputsForm(e);
     };
