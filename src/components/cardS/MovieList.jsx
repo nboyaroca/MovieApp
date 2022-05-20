@@ -58,9 +58,11 @@ export class MovieList extends Component {
     }
 
     addMovie = (data) => {
-        data.id = createUuid();
-        this.setState({ movies: [...this.state.movies, data] })
-        this.openForm()
+        movieServices.addMovie(data).then((res) => {
+            data.id = createUuid();
+            this.setState({ movies: [...this.state.movies, data] })
+            this.openForm()
+        })
     }
 
     openForm = () => {

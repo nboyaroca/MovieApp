@@ -13,9 +13,15 @@ export const movieServices = {
     },
 
     deleteMovie(id) {
-        const deletedMovie = axios.delete(baseUrl + "/movies/" + id);
+        const deletedMovie = axios.delete(baseUrl + "/movies/" + id) ;
 
         return deletedMovie;
+    },
 
-    }
+    addMovie(data) {
+        const addedMovie = axios.post(baseUrl + "/movies/", data) ;
+
+        return addedMovie;
+    },
+    
 };
