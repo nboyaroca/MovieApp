@@ -15,8 +15,8 @@ export class MovieList extends Component {
     }
     
     componentDidMount() {
-        this.setState({
-            movies: movieServices.getAllMovies(),
+        movieServices.getAllMovies().then((res) => {
+        this.setState({ movies: res });    
         });
     //cridem totes les pelis de l'array de services
     }
@@ -24,8 +24,17 @@ export class MovieList extends Component {
     deleteMovie = (id) => { //la variable deleteMovie és igual a la funció ()
         let deleteConfirmed = window.confirm('really delete ?');
         if (!deleteConfirmed) return; //clàusula salvaguarda
-        let filterMovies = this.state.movies.filter(movie => movie.id !==id);
-        this.setState({ movies: filterMovies });
+       
+        movieServices.deleteMovie(id).then((res) => {
+            if (res.status == 200) {
+                let filterMovies = this.state.movies.filter(movie => movie.id !==id);
+                this.setState({ movies: filterMovies });
+            }
+            // if (res.status == 404) {
+            //     alert("not found")
+            // }
+            // console.log(res)
+        })
     }
 
     editMovie = (id) => {
