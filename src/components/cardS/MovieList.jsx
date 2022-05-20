@@ -26,7 +26,7 @@ export class MovieList extends Component {
         if (!deleteConfirmed) return; //clàusula salvaguarda
        
         movieServices.deleteMovie(id).then((res) => {
-            if (res.status == 200) {
+            if (res.status === 200) {
                 let filterMovies = this.state.movies.filter(movie => movie.id !==id);
                 this.setState({ movies: filterMovies });
             }

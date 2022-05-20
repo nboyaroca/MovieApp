@@ -1,6 +1,5 @@
 //import { render } from "@testing-library/react";
 import { Component } from "react";
-import { movieServices } from "../../services/movieServices";
 
 export class MovieForm extends Component {
     constructor(props) {
