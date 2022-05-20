@@ -28,7 +28,7 @@ export class MovieForm extends Component {
         this.props.resetInputsForm(e);
     };
 
-    //Extract To Method
+    //Extract To Method sent to MovieList.jsx and imported by props
     // resetInputsForm = (e) => {
     //     this.setState({newMovie: {id:"", title:"", genre:"", year:"", imgUrl:""}})
     // };   
