@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { Link } from 'react-router-dom';
 //import { MovieForm } from "../form/MovieForm";
 
 export class MovieCard extends Component {
@@ -7,7 +8,11 @@ export class MovieCard extends Component {
         let movie = this.props.movie;
         return (
             <div className="film-card" id="filmCard">
+                <Link to="/element">
+                        <button className="more-button">+</button>
+                </Link>
                 <div className="film-image-frame">
+                    
                     <img className="film-image" src={movie.imgUrl} alt={movie.title}/>
                 </div>
                 <div className="film-base">
