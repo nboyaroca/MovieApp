@@ -13,7 +13,6 @@ export class MovieForm extends Component {
     onInputChange = (e) => {
         let name = e.target.name;
         let value = e.target.value;
-        console.log(name)
         this.setState({newMovie: {...this.state.newMovie, [name]:value}});
     }
 
@@ -36,10 +35,10 @@ export class MovieForm extends Component {
         return(
             <form onSubmit={this.onSubmitHandler} className="form">
                 <div className="inputForm">
-                    <input type="text" onChange={this.onInputChange} name='title' value={this.state.newMovie.title} placeholder="Title"/>
-                    <input type="text" onChange={this.onInputChange} name='genre' value={this.state.newMovie.genre} placeholder="Genre"/>
-                    <input type="num" onChange={this.onInputChange} name='year' value={this.state.newMovie.year} placeholder="Year"/>
-                    <input type="url" onChange={this.onInputChange} name='imgUrl' value={this.state.newMovie.imgUrl} placeholder="Image URL"/>  
+                    <input type="text" onChange={this.onInputChange} name='title' defaultValue={this.state.newMovie.title} placeholder="Title"/>
+                    <input type="text" onChange={this.onInputChange} name='genre' defaultValue={this.state.newMovie.genre} placeholder="Genre"/>
+                    <input type="num" onChange={this.onInputChange} name='year' defaultValue={this.state.newMovie.year} placeholder="Year"/>
+                    <input type="url" onChange={this.onInputChange} name='imgUrl' defaultValue={this.state.newMovie.imgUrl} placeholder="Image URL"/>  
                 </div>
                 {this.state.isEditMode ? 
                 <button type="submit" className="submit" id="submit">Update Your Movie</button>
