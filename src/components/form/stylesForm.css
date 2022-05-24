@@ -23,7 +23,7 @@ input::placeholder, textarea::placeholder {
   font-size: 0.875em;
 }
 
-input:focus::placeholder, textarea::focus:placeholder {
+input:focus::placeholder, textarea:focus::placeholder {
   color: #bbb5af;
 }
 
@@ -70,7 +70,7 @@ input:hover::placeholder, textarea:hover::placeholder {
   font-size: 0.875em;
 }
 
-input:hover:focus::-ms-placeholder, textarea:hover::focus:-ms-placeholder {
+input:hover:focus::-ms-placeholder, textarea:hover:focus::-ms-placeholder {
   color: #cbc6c1;
 }
 
@@ -162,8 +162,13 @@ textarea:hover {
   
   border: solid 1px #b3aca7;
   border-top: none;
+
+  transition-duration: 0.5s;
 }
 
 #submit:hover {
-  color: #e2dedb;
+  background-color: rgba(96, 99, 102, 0.8);
+  color: rgb(255, 157, 0);
+  font-size: 1em;
+  /* color: #e2dedb; */
 }

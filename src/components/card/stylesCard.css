@@ -7,8 +7,14 @@
     flex-direction: column;
     align-items: center;
     position: relative;
-    filter: drop-shadow(0.2em 0.2em 0.2em #999);
+    filter: drop-shadow(0.5em 0.5em 0.5em rgb(110, 110, 110));
+    transition-duration: 0.5s;
 }
+
+.film-card:hover{
+    box-shadow: 0 0 40px rgb(255, 157, 0);
+}
+
 
 .more-button{
     position: absolute;
@@ -20,11 +26,11 @@
     color: rgb(30, 30, 30);
     top: 10px;
     right: 10px;
-    transition-duration: 0.5s;
+    transition-duration: 0.25s;
 }
 
 .more-button:hover{
-     background-color: rgb(30, 30, 30);
+     background-color: rgb(255, 195, 90);
      color: #b3aca7;
 }
 
@@ -50,21 +56,21 @@
     height: 20%;
     position: relative;
     display: flex;
-    margin:auto;
+    /* margin:auto; */
     flex-direction: row;
 }
 
 .film-info{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    text-align: left;
+    justify-content: space-evenly;
+    /* text-align: left; */
     font-size: 80%;
-    width: 70%;
+    width: 80%;
     color: rgb(30, 30, 30);
-    margin: auto;
+    /* margin: auto; */
     height: 100%;
-    padding-left: 0.55em;
+    padding-left: 0.8em;
     text-shadow: 0.1em 0.1em 0.1em #999;
 }
 
@@ -87,26 +93,26 @@
 }
 
 .buttons{
-    width: 30%;
+    width: 20%;
     height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    padding-right: 0.4em;
+    align-items: center;
 }
 
 .card-button{
     background-color: rgb(96, 99, 102);
-    color: aliceblue;
-    width: auto;
+    color: #c4c1bd;
+    width: 70%;
     height: 40%;
     border: none;
-    border-radius: 0.4em 0 0.4em 0.4em;
-    transition: all 0.5s ease-in-out;
+    border-radius: 1.5em 0 1.5em 0.5em;
+    transition: all 0.4s ease-in-out;
 }
 
 .card-button:hover{
-    background-color: #b3aca7;
+    background-color: rgba(119, 123, 128, 0.7);
     color: rgb(30, 30, 30);
 }
 

@@ -9,7 +9,7 @@ export class MovieCard extends Component {
         return (
             <div className="film-card" id="filmCard">
                 <Link to="/element">
-                        <button className="more-button">+</button>
+                        <button className="more-button"><i className="fa-solid fa-plus"></i></button>
                 </Link>
                 <div className="film-image-frame">
                     
@@ -22,10 +22,10 @@ export class MovieCard extends Component {
                         <h3 className="year">{movie.year}</h3>
                     </div>
                     <div className="buttons">
-                        <button className="card-button"
-                        onClick={() => this.props.deleteMovie(movie.id)}>delete</button>
-                        <button className="card-button"
-                        onClick={() => this.props.editMovie(movie.id)}>change</button>
+                        <button onClick={() => this.props.deleteMovie(movie.id)}
+                        className="card-button"><i className="fa-solid fa-trash-can"></i></button>
+                        <button onClick={() => this.props.editMovie(movie.id)}
+                        className="card-button"><i className="fa-solid fa-pen-to-square"></i></button>
                     </div>
                 </div>
             </div>
