@@ -8,7 +8,9 @@
     grid-template-columns: repeat(auto, 20%);
     gap: 0.5em; */
     justify-content: space-around;
-    /*height: 70vh;
+    
+    /* SCROLL BAR
+    height: 70vh;
     overflow-y: scroll;*/
 }
 

@@ -11,17 +11,17 @@ export const movieServices = {
     },
 
     deleteMovie(id) {
-        const deletedMovie = axios.delete(baseUrl + "/movies/" + id);
+        const deletedMovie = axios.delete(baseUrl + "/movies/" + id).then((res) => res.data);
         return deletedMovie;
     },
 
     addMovie(data) {
-        const addedMovie = axios.post(baseUrl + "/movies/", data);
+        const addedMovie = axios.post(baseUrl + "/movies/", data).then((res) => res.data);
         return addedMovie;
     },
 
-    updateMovie(id, {newMovie}) {
-        const updatedMovie = axios.put(baseUrl + "/movies/" + id, {newMovie});
+    updateMovie(id, newMovie) {
+        const updatedMovie = axios.put(baseUrl + "/movies/" + id, newMovie).then((res) => res.data);
         return updatedMovie;
     }
 };
