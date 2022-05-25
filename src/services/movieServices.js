@@ -4,14 +4,12 @@ const baseUrl = "https://62863be396bccbf32d71c5a2.mockapi.io";
 
 export const movieServices = {
     getAllMovies() {
-        const movies = axios.get(baseUrl + "/movies").then( (res) => {
-            return res.data;
-        });
+        const movies = axios.get(baseUrl + "/movies").then((res) => res.data);
         return movies;
     },
 
     deleteMovie(id) {
-        const deletedMovie = axios.delete(baseUrl + "/movies/" + id)//.then((res) => res.data); amb el "then" no esborra
+        const deletedMovie = axios.delete(baseUrl + "/movies/" + id); 
         return deletedMovie;
     },
 

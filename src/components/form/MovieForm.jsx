@@ -1,4 +1,4 @@
-//import { render } from "@testing-library/react";
+// import { render } from "@testing-library/react";
 import { Component } from "react";
 
 export class MovieForm extends Component {
@@ -49,4 +49,3 @@ export class MovieForm extends Component {
         )
     }
 }
-

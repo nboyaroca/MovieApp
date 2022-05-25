@@ -1,12 +1,9 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
-export default function movie() {
+export default function MoviePage() {
   return (
-    <> You are in the MoviePage
-        <Link to="/element">
-          <button>movie link</button>
-        </Link>
+    <> 
+      You are in the MoviePage
     </>
   )
 }

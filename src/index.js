@@ -2,8 +2,10 @@ import React from 'react';
 import {createRoot} from 'react-dom/client';
 import Router from './application/Router'
 import './components/main.css';
-import App from './App';
+import '../src/'
 import reportWebVitals from './reportWebVitals';
+
+//li diem què volem que imprimeixi com a principal
 
 const container = document.getElementById('root');
 const root = createRoot(container); //createRoot és un mètode propi de React Router Dom

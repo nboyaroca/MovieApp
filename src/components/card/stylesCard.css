@@ -1,129 +1,170 @@
-
-
-.film-card{
-    width: 20%;
-    margin: 2.5%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    filter: drop-shadow(0.5em 0.5em 0.5em rgb(110, 110, 110));
-    transition-duration: 0.5s;
+.film-card {
+  /* width: 20%; */
+  /* margin: 2.5%; */
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  position: relative;
+  filter: drop-shadow(0.5em 0.5em 0.5em rgb(110, 110, 110));
+  transition-duration: 0.25s;
 }
 
-.film-card:hover{
-    box-shadow: 0 0 40px rgb(255, 157, 0);
+.film-card:hover {
+  box-shadow: 0 0 25px rgb(255, 157, 0);
 }
 
-
-.more-button{
-    position: absolute;
-    width: 2em;
-    height: 2em;
-    border: none;
-    border-radius: 50%;
-    background-color: #b3aca7;
-    color: rgb(30, 30, 30);
-    top: 10px;
-    right: 10px;
-    transition-duration: 0.25s;
+.more-button {
+  position: absolute;
+  width: 2.25em;
+  height: 2.25em;
+  border: none;
+  border-radius: 50%;
+  background-color: #b3aca7;
+  color: rgb(30, 30, 30);
+  top: 1.5%;
+  right: 3%;
+  transition-duration: 0.25s;
 }
 
-.more-button:hover{
-     background-color: rgb(255, 195, 90);
-     color: #b3aca7;
+.more-button:hover {
+  background-color: rgb(255, 195, 90);
+  color: #b3aca7;
 }
 
-.film-image-frame{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 80%;
-    overflow-x: hidden;
+.film-image-frame {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 80%;
+  overflow-x: hidden;
 }
 
-.film-image{
-    width: 100%;
+.film-image {
+  width: 100%;
 }
 
 /* .film-image:hover{
     opacity: 0.5;
 } */
 
-.film-base{
-    background: #b3aca7;
-    width: 100%;
-    height: 20%;
-    position: relative;
-    display: flex;
-    /* margin:auto; */
-    flex-direction: row;
+.film-base {
+  background: #b3aca7;
+  width: 100%;
+  height: 20%;
+  position: relative;
+  display: flex;
+  /* margin:auto; */
+  flex-direction: row;
 }
 
-.film-info{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    /* text-align: left; */
-    font-size: 80%;
-    width: 80%;
-    color: rgb(30, 30, 30);
-    /* margin: auto; */
-    height: 100%;
-    padding-left: 0.8em;
-    text-shadow: 0.1em 0.1em 0.1em #999;
+.film-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  /* text-align: left; */
+  font-size: 80%;
+  width: 85%;
+  color: rgb(30, 30, 30);
+  /* margin: auto; */
+  height: 100%;
+  padding-left: 0.8em;
+  text-shadow: 0.1em 0.1em 0.1em #999;
 }
 
-.name{
-    font-family: 'roboto';
-    font-weight: 900;
-    font-size: larger;
-    margin: 0%;
+.name {
+  font-family: "roboto";
+  font-weight: 900;
+  font-size: larger;
 }
 
-.genre{
-    margin: 0%;
+.genre {
+  font-style: italic;
 }
 
-.year{
-    font-family: 'roboto';
-    font-weight: bolder;
-    font-size: small;
-    margin: 0%;
+.year {
+  font-family: "roboto";
+  font-weight: bolder;
+  font-size: small;
 }
 
-.buttons{
-    width: 20%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+.buttons {
+  width: 15%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.card-button {
+  background-color: rgb(96, 99, 102);
+  color: #c4c1bd;
+  width: 2.5em;
+  height: 2.5em;
+  border: none;
+  border-radius: 50%;
+  transition: all 0.4s ease-in-out;
+  overflow: hidden;
+}
+
+.card-button:hover {
+  background-color: rgba(119, 123, 128, 0.7);
+  color: rgb(30, 30, 30);
+}
+
+.cart-button span {
+  transition: all 200ms
+}
+
+a:link {
+  color: #c4c1bd;
+}
+
+/* visited link */
+a:visited {
+  color: #c4c1bd;
+}
+
+/* mouse over link */
+a:hover {
+  color: rgb(30, 30, 30);
+}
+
+/* selected link */
+a:active {
+  color: rgb(255, 195, 90);
+}
+
+
+/* .card-button::after {
+  display: flex;
+  justify-self: unset;
+    content: "";
+  position: absolute;
+  margin: 5px -10px;
+  width: 1.5em;
+  height: 1.5em;
+  transform: rotate(45deg);
+  background-color: #b3aca7; /* to see where it is*/
+  /* box-shadow: 0 0 0 20px #b3aca7;
+} */
+
+
+
+/* MEDIA QUERY */
+
+@media screen and (max-width: 820px) {
+  .film-card {
+    /* width: 45%; */
+    grid-template-columns: 40% 40%;
     align-items: center;
+    justify-content: center;
+  }
 }
 
-.card-button{
-    background-color: rgb(96, 99, 102);
-    color: #c4c1bd;
-    width: 70%;
-    height: 40%;
-    border: none;
-    border-radius: 1.5em 0 1.5em 0.5em;
-    transition: all 0.4s ease-in-out;
-}
-
-.card-button:hover{
-    background-color: rgba(119, 123, 128, 0.7);
-    color: rgb(30, 30, 30);
-}
-
-@media screen and (max-width: 820px){
-    .film-card{
-        width: 45%;
-    }
-}
-
-@media screen and (max-width: 375px){
-    .film-card{
-        width: 95%;
-    }
+@media screen and (max-width: 415px) {
+  .film-card {
+    /* width: 95%; */
+    grid-template-columns: 90%;
+  }
 }

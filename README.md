@@ -9,32 +9,43 @@ This is a React App that shows a list of movies with their title, year, genre an
 
 ------------
 
-
+&nbsp;
 
 #### USER STORIES  📄
+
 >Get a list with card movies
+
 >Add new movie card using a form
+
 >Delete movies
+
 >Update movies using the form
+
 >Get a new page with movie details
 
-
+&nbsp;
 
 #### TECHNOLOGIES ⚙️
 >React
+
 >Node.js
+
 >Axios
+
 >Async-Await
 
-
+&nbsp;
 
 #### TOOLS 🔧
 >Api server: Mock Api
+
 >Api platform: Postman
 
+&nbsp;
 
 #### THANKS TO ✔️
 All my classmates that, despite being an individual project, they have all been there to help and encourage me.
+
 My F5 Formers, for their patience and good mood.
 
 
@@ -44,7 +55,7 @@ Whoow! This is my first React App!
 ------------
 
 
-
+&nbsp;
 
 
 ------------

@@ -9,18 +9,20 @@ export class MovieList extends Component {
         super();
         this.state={
             viewForm: false,
+            isEditMode: false,
             editedMovie: { },
             movies: [],
         }
     }
     
+    //Cridem totes les pel·lícules de l'array de "services"
     componentDidMount() {
         movieServices.getAllMovies().then((res) => {
         this.setState({ movies: res });    
         });
-    //cridem totes les pelis de l'array de services
     }
 
+    //FUNCIÓ PER ESBORRAR UNA PEL·LÍCULA
     deleteMovie = (id) => { //la variable deleteMovie és igual a la funció ()
         let deleteConfirmed = window.confirm('really delete ?');
         if (!deleteConfirmed) return; //clàusula salvaguarda
@@ -37,6 +39,7 @@ export class MovieList extends Component {
         })
     }
 
+    //FUNCIÓ PER EDITAR UNA PEL·LÍCULA
     editMovie = (id) => {
         this.openForm();
         let editedMovie = this.state.movies.find(movie => movie.id === id);
@@ -46,6 +49,7 @@ export class MovieList extends Component {
         this.setState({isEditMode: true})
     }
 
+    //FUNCIÓ PER CANVIAR UNA PEL·LÍCULA
     updateMovie = (newMovie) => {
             let newMoviesState = this.state.movies //fem un nou array com l'original
             let movieToEditIndex = newMoviesState.findIndex(movie => movie.id === newMovie.id); //busquem l'index que sigui igual al que volem canviar
@@ -58,6 +62,7 @@ export class MovieList extends Component {
         this.setState({isEditMode: false})
     }
 
+    //FUNCIÓ PER AFEGIR UNA PEL·LÍCULA
     addMovie = (data) => {
             data.id = createUuid();
         movieServices.addMovie(data).then((res) => {
@@ -67,18 +72,21 @@ export class MovieList extends Component {
         this.openForm()
     }
 
+    //FUNCIÓ PER BUIDAR OBRIR I TANCAR EL FORMULARI
     openForm = () => {
         this.setState(prevState => ({ viewForm: !prevState.viewForm}));
         //prèviament this.setState({ viewForm: true })
         //una altra forma és if else:
         //   if (this.state.viewform) this.setState({viewform:false});
         //   else this.setState({viewform:true})
+        this.resetInputsForm()
+        this.setState({isEditMode: false})
         
     }
 
+    //FUNCIÓ PER BUIDAR EL FORMULARI
     resetInputsForm = () => {
         this.setState({editedMovie: {id:"", title:"", genre:"", year:"", imgUrl:""}})
-        //per buidar el formulari
     };   
 
     render() {

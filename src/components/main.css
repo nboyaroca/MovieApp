@@ -3,7 +3,6 @@
 @import url(./cardS/stylesList.css);
 @import url(./form/stylesForm.css);
 
-
 *{
     margin: 0;
     padding: 0;
@@ -18,8 +17,5 @@ body{
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
 }
-
-
