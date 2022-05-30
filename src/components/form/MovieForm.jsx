@@ -1,46 +1,54 @@
-// import { render } from "@testing-library/react";
-import { Component } from "react";
+import { useState } from "react";
 
-export class MovieForm extends Component {
-    constructor(props) {
-        super(props);
-        this.state={
-            newMovie: this.props.editedMovie,
-            isEditMode: this.props.isEditMode,
-        }
-    }
+export function MovieForm ({addMovie, updateMovie, resetInputsForm, editedMovie, isEditMode}) {
 
-    onInputChange = (e) => {
+    const [newMovie, setNewMovie] = useState(editedMovie)
+
+    const onInputChange = (e) => {
         let name = e.target.name;
         let value = e.target.value;
-        this.setState({newMovie: {...this.state.newMovie, [name]:value}});
+        setNewMovie({...newMovie, [name]:value});
+                
+        // let name = e.target.name;
+        // let value = e.target.value;
+        // setState({newMovie: {...state.newMovie, [name]:value}});
     }
 
-    onSubmitHandler = (e) => {
+    const onSubmitHandler = (e) => {
         e.preventDefault();
         
-        !this.state.isEditMode ? 
-        this.props.addMovie(this.state.newMovie) //this.state.newMovie representa "data" de la funció addMovie
-        : this.props.updateMovie(this.state.newMovie) //this.state.newMovie és "newMovie" de la funció updateMovie
+        !isEditMode ? 
+        addMovie(newMovie)
+        : updateMovie(newMovie);
+           
+        // setIsEditMode() //ATENCIÓ: el botó add i update no canvia però el tipus de dades del form sí.
+        resetInputsForm(e);
+        
+        
+        // e.preventDefault();
+        
+        // !state.isEditMode ? 
+        // props.addMovie(state.newMovie) //state.newMovie representa "data" de la funció addMovie
+        // : props.updateMovie(state.newMovie) //state.newMovie és "newMovie" de la funció updateMovie
                 
-        this.props.resetInputsForm(e);
+        // props.resetInputsForm(e);
     };
 
     //Extract To Method sent to MovieList.jsx and imported by props
     // resetInputsForm = (e) => {
-    //     this.setState({newMovie: {id:"", title:"", genre:"", year:"", imgUrl:""}})
+    //     setState({newMovie: {id:"", title:"", genre:"", year:"", imgUrl:""}})
     // };   
 
-    render() {
+
         return(
-            <form onSubmit={this.onSubmitHandler} className="form">
+            <form onSubmit={onSubmitHandler} className="form">
                 <div className="inputForm">
-                    <input type="text" onChange={this.onInputChange} name='title' defaultValue={this.state.newMovie.title} placeholder="Title"/>
-                    <input type="text" onChange={this.onInputChange} name='genre' defaultValue={this.state.newMovie.genre} placeholder="Genre"/>
-                    <input type="num" onChange={this.onInputChange} name='year' defaultValue={this.state.newMovie.year} placeholder="Year"/>
-                    <input type="url" onChange={this.onInputChange} name='imgUrl' defaultValue={this.state.newMovie.imgUrl} placeholder="Image URL"/>  
+                    <input type="text" onChange={onInputChange} name='title' defaultValue={newMovie.title} placeholder="Title"/>
+                    <input type="text" onChange={onInputChange} name='genre' defaultValue={newMovie.genre} placeholder="Genre"/>
+                    <input type="num" onChange={onInputChange} name='year' defaultValue={newMovie.year} placeholder="Year"/>
+                    <input type="url" onChange={onInputChange} name='imgUrl' defaultValue={newMovie.imgUrl} placeholder="Image URL"/>  
                 </div>
-                {this.state.isEditMode ? 
+                {isEditMode ? 
                 <button type="submit" className="submit" id="submit">Update Your Movie</button>
                 : <button type="submit" className="submit" id="submit">Add Your Movie</button>
                 }
@@ -48,4 +56,3 @@ export class MovieForm extends Component {
             </form>
         )
     }
-}

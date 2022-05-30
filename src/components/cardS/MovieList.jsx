@@ -1,114 +1,122 @@
-import { Component } from "react";
+import { useState, useEffect } from "react";
 import { movieServices } from "../../services/movieServices";
 import { createUuid } from "../../utils/createUuid";
 import { MovieCard } from "../card/MovieCard";
 import { MovieForm } from "../form/MovieForm";
+import { Loading } from "../loading/Loading";
 
-export class MovieList extends Component {
-    constructor() {
-        super();
-        this.state={
-            viewForm: false,
-            isEditMode: false,
-            editedMovie: { },
-            movies: [],
-        }
-    }
+
+
+export function MovieList ( ) {
     
-    //Cridem totes les pel·lícules de l'array de "services"
-    componentDidMount() {
+    const [movies, setMovies] = useState ([])
+    const [editedMovie, setEditedMovie] = useState ('')
+    const [isEditMode, setIsEditMode] = useState (false)
+    const [isLoading, setIsLoading] = useState(false)
+    const [viewForm, setViewForm] = useState(false)
+    
+
+    useEffect(() => {
+       getAllMovies();
+    },[]);
+    
+
+    const getAllMovies = () => {
+        setIsLoading(true)
         movieServices.getAllMovies().then((res) => {
-        this.setState({ movies: res });    
+            setMovies(res);
+            setIsLoading(false);
         });
-    }
+    };
 
     //FUNCIÓ PER ESBORRAR UNA PEL·LÍCULA
-    deleteMovie = (id) => { //la variable deleteMovie és igual a la funció ()
+    const deleteMovie = (id) => {
         let deleteConfirmed = window.confirm('really delete ?');
         if (!deleteConfirmed) return; //clàusula salvaguarda
-       
+        
         movieServices.deleteMovie(id).then((res) => {
             if (res.status === 200) {
-                let filterMovies = this.state.movies.filter(movie => movie.id !==id);
-                this.setState({ movies: filterMovies });
+                let filterMovies = movies.filter(movie => movie.id !==id);
+                setMovies(filterMovies );
             }
-            // if (res.status == 404) {
-            //     alert("not found")
-            // }
-            // console.log(res)
         })
     }
 
-    //FUNCIÓ PER EDITAR UNA PEL·LÍCULA
-    editMovie = (id) => {
-        this.openForm();
-        let editedMovie = this.state.movies.find(movie => movie.id === id);
-        //return editedMovie;
-        console.log(editedMovie);
-        this.setState({editedMovie})
-        this.setState({isEditMode: true})
-    }
+    //FUNCIÓ PER EDITAR UNA PEL·LÍCULA (omplir els camps del formulari)
+    const editMovie = (id) => {
+        openForm();
+        let editedMovie = movies.find(movie => movie.id === id);
+            setEditedMovie(editedMovie);
+            setIsEditMode(true);
+        }
 
     //FUNCIÓ PER CANVIAR UNA PEL·LÍCULA
-    updateMovie = (newMovie) => {
-            let newMoviesState = this.state.movies //fem un nou array com l'original
-            let movieToEditIndex = newMoviesState.findIndex(movie => movie.id === newMovie.id); //busquem l'index que sigui igual al que volem canviar
+    const updateMovie = (newMovie) => {
         movieServices.updateMovie(newMovie.id, newMovie).then((res) => {
-            newMoviesState[movieToEditIndex] = res //de la nova llista newMoviesState busquem l'index [movieToEditIndex] i li diem que és newMovie
-            this.setState({movies: newMoviesState})          
+            let movieToUpdate = movies.map((movie) => movie.id === newMovie.id ? newMovie : movie)
+            setMovies(movieToUpdate)
+            // .catch((err) => console.log(err))
         })
-        this.openForm()
-        this.resetInputsForm()
-        this.setState({isEditMode: false})
+        openForm()
+        resetInputsForm()
+        setIsEditMode(false)
     }
 
     //FUNCIÓ PER AFEGIR UNA PEL·LÍCULA
-    addMovie = (data) => {
+    const addMovie = (data) => {
             data.id = createUuid();
         movieServices.addMovie(data).then((res) => {
-            this.setState({ movies: [...this.state.movies, res] }) // ... script operator
+            setMovies([...movies, res])
             
         })
-        this.openForm()
+        openForm()
     }
 
-    //FUNCIÓ PER BUIDAR OBRIR I TANCAR EL FORMULARI
-    openForm = () => {
-        this.setState(prevState => ({ viewForm: !prevState.viewForm}));
-        //prèviament this.setState({ viewForm: true })
-        //una altra forma és if else:
-        //   if (this.state.viewform) this.setState({viewform:false});
-        //   else this.setState({viewform:true})
-        this.resetInputsForm()
-        this.setState({isEditMode: false})
-        
+    //FUNCIÓ PER OBRIR I TANCAR EL FORMULARI
+    const openForm = () => {
+        if (viewForm) setViewForm(false);
+        else setViewForm(true);
+
+        // setState(prevState => ({ viewForm: !prevState.viewForm}));
+        // ////prèviament setState({ viewForm: true })
+        // ////una altra forma és if else:
+        // ////   if (state.viewform) setState({viewform:false});
+        // ////   else setState({viewform:true})
+        resetInputsForm()
+        setIsEditMode(false)  
     }
 
     //FUNCIÓ PER BUIDAR EL FORMULARI
-    resetInputsForm = () => {
-        this.setState({editedMovie: {id:"", title:"", genre:"", year:"", imgUrl:""}})
-    };   
+    const resetInputsForm = () => {
+        setEditedMovie({id:"", title:"", genre:"", year:"", imgUrl:""})
+    };
 
-    render() {
+
+    
+
+
         return (
             <section>
-                <button onClick={ this.openForm } className="add-button"> Add A Film By Yourself,  Click Here! </button>
-                {this.state.viewForm ? <MovieForm 
-                    addMovie={this.addMovie} //passem paràmetres d'un component a un altre
-                    editedMovie={this.state.editedMovie} 
-                    isEditMode={this.state.isEditMode} 
-                    updateMovie={this.updateMovie}
-                    resetInputsForm={this.resetInputsForm}/> 
+                <button onClick={ openForm } className="add-button"> Add A Film By Yourself,  Click Here! </button>
+                {viewForm ? <MovieForm 
+                    addMovie={addMovie}
+                    editedMovie={editedMovie} 
+                    isEditMode={isEditMode} 
+                    updateMovie={updateMovie}
+                    resetInputsForm={resetInputsForm}/> 
                     : ''
                 }
-                <div className="film-list">
-                    {this.state.movies.map((movie, key) => (
+                {isLoading ?
+                (<Loading/>)
+                : (<div className="film-list">
+                    {movies.map((movie, key) => (
                     <MovieCard key={key} movie={movie}
-                    deleteMovie={this.deleteMovie}
-                    editMovie={this.editMovie}/>     
+                    deleteMovie={deleteMovie}
+                    editMovie={editMovie}/>     
                     ))}
-                </div>
+                </div>)
+                }
             </section>
         )
-    }
 }
+

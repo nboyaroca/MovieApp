@@ -1,7 +1,7 @@
 # MOVIE APP  🎬
 ### Your favourite movie list
 
-🔗 Link to pages
+🔗 https://nboyaroca.github.io/MovieApp/
 
 
 ------------
