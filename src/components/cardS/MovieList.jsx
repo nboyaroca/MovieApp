@@ -78,6 +78,7 @@ export function MovieList ( ) {
         else setViewForm(true);
 
         // setState(prevState => ({ viewForm: !prevState.viewForm}));
+        
         // ////prèviament setState({ viewForm: true })
         // ////una altra forma és if else:
         // ////   if (state.viewform) setState({viewform:false});
@@ -91,10 +92,6 @@ export function MovieList ( ) {
         setEditedMovie({id:"", title:"", genre:"", year:"", imgUrl:""})
     };
 
-
-    
-
-
         return (
             <section>
                 <button onClick={ openForm } className="add-button"> Add A Film By Yourself,  Click Here! </button>
@@ -106,16 +103,13 @@ export function MovieList ( ) {
                     resetInputsForm={resetInputsForm}/> 
                     : ''
                 }
-                {isLoading ?
-                (<Loading/>)
-                : (<div className="film-list">
+                (<div className="film-list">
                     {movies.map((movie, key) => (
                     <MovieCard key={key} movie={movie}
                     deleteMovie={deleteMovie}
                     editMovie={editMovie}/>     
                     ))}
                 </div>)
-                }
             </section>
         )
 }
