@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { MovieList } from '../../components/cardS/MovieList'
 
-export default class Home extends Component {
-  render() {
+export default function HomePage() {
+
     return (
       <>
         
@@ -10,5 +10,5 @@ export default class Home extends Component {
                
       </>
     )
-  }
+
 }
