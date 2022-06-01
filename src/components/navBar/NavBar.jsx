@@ -1,19 +1,26 @@
-import React from 'react'
+import React from "react";
+import image from "../../images/filmroll-o.png";
+import { Link } from "react-router-dom";
 
 export default function NavBar() {
   return (
     <section>
-  <div className='divi'>LOGO</div>
-  <nav>
-    {/* <ul class="menuItems">
-      <li><a href='#' data-item='Home'>Home</a></li>
-      <li><a href='#' data-item='About'>About</a></li>
-      <li><a href='#' data-item='Projects'>Projects</a></li>
-      <li><a href='#' data-item='Blog'>Blog</a></li>
-      <li><a href='#' data-item='Contact'>Contact</a></li>
-    </ul> */}
-  </nav>
+      <div className="navbar">
+        <div className="logo-container-left">
+          <img className="logo-image-left" src={image} alt=""/>
+        </div>
 
-</section>
-  )
+        <Link to="/">
+          <div className="main-text">
+            faV Movie
+          </div>
+        </Link>
+        
+        <div className="logo-container-right">
+          <img className="logo-image-right" src={image} alt=""/>
+        </div>
+
+      </div>
+    </section>
+  );
 }

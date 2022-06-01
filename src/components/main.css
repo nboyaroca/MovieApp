@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;400&family=Orbitron:wght@400;700;900&family=Syncopate:wght@400;700&display=swap');
 @import url(./card/stylesCard.css);
 @import url(./cardS/stylesList.css);
 @import url(./form/stylesForm.css);
 @import url(./loader/loader.css);
+@import url(./navbar/navBar.css);
 @import url(../pages/movies/moviePage.css);
 
 *{
@@ -20,4 +22,9 @@ body{
     font-size: 16px;
     display: flex;
     justify-content: center;
+    background-color: rgb(30, 30, 30);
 }
+
+/* font-family: 'Syncopate', sans-serif;
+    font-family: 'Kanit', sans-serif;
+    font-family: 'Orbitron', sans-serif; */

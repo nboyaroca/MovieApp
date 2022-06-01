@@ -43,7 +43,7 @@ export default function MoviePage() {
           <h5 className="year">{movie.year}</h5>
           </div>
           <div>
-            <h6 className="sipnosis-title">Sipnosis:</h6>
+            <h6 className="sipnosis-title">SINOPSIS:</h6>
             <p className="sipnosis-info">{movie.sipnosis}</p>
             <br></br>
             <p className='paragraph'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh ut lacus dapibus sollicitudin quis eu mauris. Phasellus mi velit, varius sit amet ornare dictum, varius eu neque. Aliquam ac rutrum magna. Cras lacinia massa a suscipit accumsan. Donec ultricies dolor et mattis bibendum. Nunc eu tortor augue. Vivamus a scelerisque ipsum, in elementum dui.</p>

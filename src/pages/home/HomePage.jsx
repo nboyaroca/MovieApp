@@ -8,7 +8,10 @@ export default function HomePage() {
     return (
       <>
         <NavBar/>
-        <MovieList />
+       
+          <MovieList />
+       
+        
                
       </>
     )
