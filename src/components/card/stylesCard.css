@@ -24,6 +24,7 @@
   top: 1.5%;
   right: 3%;
   transition-duration: 0.25s;
+  cursor: pointer;
 }
 
 .more-button:hover {
@@ -94,6 +95,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+
 }
 
 .card-button {
@@ -105,6 +107,7 @@
   border-radius: 50%;
   transition: all 0.4s ease-in-out;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .card-button:hover {

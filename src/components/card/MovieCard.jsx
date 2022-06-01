@@ -7,9 +7,7 @@ export function MovieCard ({movie, deleteMovie, editMovie} ) {
             <div className="film-card" id="filmCard">
                 <Link to={`/movie/${movie.id}`}>
                     <button className="more-button">
-                        <a href="#root"><span>
                         <i className="fa-solid fa-info"></i>
-                        </span></a>
                     </button>
                 </Link>
                 <div className="film-image-frame">
@@ -23,9 +21,9 @@ export function MovieCard ({movie, deleteMovie, editMovie} ) {
                     </div>
                     <div className="buttons">
                         <button onClick={() => deleteMovie(movie.id)}
-                        className="card-button"><a href="#root"><span><i className="fa-solid fa-trash-can"></i></span></a></button>
+                        className="card-button"><i className="fa-solid fa-trash-can"></i></button>
                         <button onClick={() => editMovie(movie.id)}
-                        className="card-button"><a href="#root"><span><i className="fa-solid fa-pen-to-square"></i></span></a></button>
+                        className="card-button"><i className="fa-solid fa-pen-to-square"></i></button>
                     </div>
                 </div>
             </div>

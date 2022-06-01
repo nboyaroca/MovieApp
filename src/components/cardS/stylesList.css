@@ -23,6 +23,7 @@
     color: #726659;
     font-family: 'lato';
     font-size: x-large;
+    cursor: pointer;
 }
 
 .add-button:hover {

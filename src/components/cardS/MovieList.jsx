@@ -3,7 +3,7 @@ import { movieServices } from "../../services/movieServices";
 import { createUuid } from "../../utils/createUuid";
 import { MovieCard } from "../card/MovieCard";
 import { MovieForm } from "../form/MovieForm";
-import { Loading } from "../loading/Loading";
+import Loader from "../loader/Loader";
 
 
 
@@ -103,13 +103,14 @@ export function MovieList ( ) {
                     resetInputsForm={resetInputsForm}/> 
                     : ''
                 }
-                (<div className="film-list">
+                {isLoading && <Loader/>}
+                <div className="film-list">
                     {movies.map((movie, key) => (
                     <MovieCard key={key} movie={movie}
                     deleteMovie={deleteMovie}
                     editMovie={editMovie}/>     
                     ))}
-                </div>)
+                </div>
             </section>
         )
 }

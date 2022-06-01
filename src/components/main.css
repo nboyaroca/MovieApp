@@ -2,7 +2,7 @@
 @import url(./card/stylesCard.css);
 @import url(./cardS/stylesList.css);
 @import url(./form/stylesForm.css);
-@import url(./loading/Loading.jsx);
+@import url(./loader/loader.css);
 @import url(../pages/movies/moviePage.css);
 
 *{
