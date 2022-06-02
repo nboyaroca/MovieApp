@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { movieServices } from '../../services/movieServices';
 import NavBar from '../../components/navbar/NavBar';
 
+
 export default function MoviePage() {
   
   const [movie, setMovie] = useState({});
