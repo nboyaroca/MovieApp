@@ -31,15 +31,16 @@ export function MovieList ( ) {
     };
 
     //FUNCIÓ PER ESBORRAR UNA PEL·LÍCULA
-    const deleteMovie = (id) => {
-        let deleteConfirmed = window.confirm(`really delete ?`);
+    const deleteMovie = (movie) => {
+        let deleteConfirmed = window.confirm(`really delete ${movie.title}?`);
         if (!deleteConfirmed) return; //clàusula salvaguarda
         
-        movieServices.deleteMovie(id).then((res) => {
+        movieServices.deleteMovie(movie.id).then((res) => {
+            
             if (res.status === 200) {
-                let filterMovies = movies.filter(movie => movie.id !==id);
-                setMovies(filterMovies );
-            }
+                let filterMovies = movies.filter(item => item.id !==movie.id);
+                setMovies(filterMovies);
+            } 
         })
     }
 
@@ -97,9 +98,7 @@ export function MovieList ( ) {
             <section>
               <div className="auxiliar"></div>
               <Slider/>
-
-                {viewForm ? "" : 
-                <button onClick={ openForm } className="add-button"> Add A Film By Yourself,  Click Here! </button>}
+                <button onClick={ openForm } className="add-button"> Add A Film By Yourself,  Click Here! </button>
                 {viewForm ? <MovieForm 
                     addMovie={addMovie}
                     editedMovie={editedMovie} 

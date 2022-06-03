@@ -4,7 +4,7 @@ a {
 
 .navbar {
   background-color: rgb(30, 30, 30);
-  height: 9.7em;
+  height: 5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -15,7 +15,7 @@ a {
 }
 
 .logo-container-left {
-  height: 9.7em;
+  height: 100%;
   display: flex;
   justify-content: left;
   overflow-x: hidden;
@@ -27,7 +27,7 @@ a {
 }
 
 .logo-container-right {
-  height: 9.7em;
+  height: 100%;
   display: flex;
   justify-content: right;
   overflow-x: hidden;

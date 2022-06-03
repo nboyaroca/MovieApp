@@ -25,6 +25,26 @@ This is a React App that shows a list of movies with their title, year, genre an
 
 &nbsp;
 
+### UI DESIGN
+
+# Desktop
+&nbsp;
+[MovieApp-main-Desktop](https://user-images.githubusercontent.com/102729704/171833236-1b7402ad-e92b-48ed-8af8-6690f8ac24ee.jpg)
+&nbsp;
+![MovieApp-main-Desktop2](https://user-images.githubusercontent.com/102729704/171833365-1d4d0d3a-62a5-4e1a-8247-b59f7da3efdb.jpg)
+&nbsp;
+![MovieApp-page-Desktop](https://user-images.githubusercontent.com/102729704/171833475-49a2a3bb-c8b7-436d-8b97-e8c950f89428.jpg)
+&nbsp;
+# Smartphone
+&nbsp;
+![MovieApp-main-Smartphone](https://user-images.githubusercontent.com/102729704/171834688-8634644b-1ea5-4580-8afb-7aa82327475b.png)
+&nbsp;
+![MovieApp-main-Smartphone2](https://user-images.githubusercontent.com/102729704/171834710-5b4c741f-e3d4-453e-87ca-478def956dad.png)
+&nbsp;
+![MovieApp-page-Smartphone](https://user-images.githubusercontent.com/102729704/171834727-120be900-afca-4f82-90cc-d524b18fc223.png)
+
+&nbsp;
+
 #### TECHNOLOGIES ⚙️
 >React
 
@@ -47,6 +67,15 @@ This is a React App that shows a list of movies with their title, year, genre an
 >The app must have a Continuous Integration & Continuous Deployment point of view. 
 
 >The app must be all time in production.
+
+&nbsp;
+
+#### NEXT STEPS 👣
+>Add a favourite button on each card
+
+>Dinamic slider with favourites movies
+
+>Convert the form to modal
 
 &nbsp;
 
