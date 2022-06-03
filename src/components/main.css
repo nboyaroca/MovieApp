@@ -5,6 +5,7 @@
 @import url(./form/stylesForm.css);
 @import url(./loader/loader.css);
 @import url(./navbar/navBar.css);
+@import url(./slider/slider.css);
 @import url(../pages/movies/moviePage.css);
 
 *{
@@ -21,6 +22,7 @@ body{
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     background-color: rgb(30, 30, 30);
 }

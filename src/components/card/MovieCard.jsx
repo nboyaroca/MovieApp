@@ -23,7 +23,8 @@ export function MovieCard ({movie, deleteMovie, editMovie} ) {
                         <button onClick={() => deleteMovie(movie.id)}
                         className="card-button"><i className="fa-solid fa-trash-can"></i></button>
                         <button onClick={() => editMovie(movie.id)}
-                        className="card-button"><i className="fa-solid fa-pen-to-square"></i></button>
+                        className="card-button"><a href="#root"><span><i className="fa-solid fa-pen-to-square"></i></span></a></button>
+                        
                     </div>
                 </div>
             </div>

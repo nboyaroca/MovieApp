@@ -4,6 +4,7 @@
         "title": "Gattaca",
         "genre": "Science-fiction",
         "year": 1999,
+        "sipnosis": "Donec a tortor volutpat",
         "imgUrl": "https://www.cineycine.com/archivos/2013/11/gattaca-poster.jpg"
     },
     {
@@ -11,6 +12,7 @@
         "title": "Matrix",
         "genre": "Science-fiction",
         "year": 1999,
+        "sipnosis": "Donec a tortor volutpat",
         "imgUrl":
         "https://www.cineycine.com/archivos/2021/12/matrix-poster.jpg"
     },
@@ -19,6 +21,7 @@
         "title": "Los amantes del Círculo Polar",
         "genre": "Drama",
         "year": 1998,
+        "sipnosis": "Donec a tortor volutpat",
         "imgUrl":
         "https://www.tuposter.com/pub/media/catalog/product/cache/image/700x560/91bbed04eb86c2a8aaef7fbfb2041b2a/f/i/file_125_9.jpg"
     },
@@ -27,6 +30,7 @@
         "title": "Dogma",
         "genre": "Comedy",
         "year": 1999,
+        "sipnosis": "Donec a tortor volutpat",
         "imgUrl":
         "https://es.web.img3.acsta.net/medias/nmedia/18/67/78/94/20302650.jpg"
     },
@@ -35,6 +39,7 @@
         "title": "The Piano",
         "genre": "Drama",
         "year": 1993,
+        "sipnosis": "Donec a tortor volutpat",
         "imgUrl":
         "https://www.tuposter.com/pub/media/catalog/product/cache/image/700x560/91bbed04eb86c2a8aaef7fbfb2041b2a/e/l/el_piano_p_ster.png"
     },
@@ -43,6 +48,7 @@
         "title": "Cube",
         "genre": "Science-fiction / Scary Movie",
         "year": 1997,
+        "sipnosis": "Donec a tortor volutpat",
         "imgUrl": 
         "https://wildinthestreetsblog.files.wordpress.com/2010/06/cube_the_movie_poster_art.jpg"
     },
@@ -51,6 +57,7 @@
         "title": "Kill Bill Vol.1",
         "genre": "Action",
         "year": 2003,
+        "sipnosis": "Donec a tortor volutpat",
         "imgUrl": 
         "https://markwillltc.files.wordpress.com/2017/09/yjbd1jbhmpbd5ak2mw6aq95u.jpeg"
     },
@@ -59,7 +66,44 @@
         "title": "Eduard Scissorhands",
         "genre": "Fantastic",
         "year": 1990,
+        "sipnosis": "Donec a tortor volutpat",
         "imgUrl": 
         "https://www.ecartelera.com/carteles/4800/4849/001.jpg"
+    },
+    {
+        "id": "9",
+        "title": "Dunkirk",
+        "genre": "War Thriller",
+        "year": 2017,
+        "sipnosis": "Donec a tortor volutpat",
+        "imgUrl": 
+        "https://www.phenomena-experience.com/galeria/Mayo_2017/dunkirk-poster.jpg"
+    },
+    {
+        "id": "10",
+        "title": "Inception",
+        "genre": "Science-fiction",
+        "year": 2010,
+        "sipnosis": "Donec a tortor volutpat",
+        "imgUrl": 
+        "https://c8.alamy.com/comp/T2Y5JX/movie-poster-inception-2010-T2Y5JX.jpg"
+    },
+    {
+        "id": "11",
+        "title": "The Usual Suspects",
+        "genre": "Thriller",
+        "year": 1995,
+        "sipnosis": "Donec a tortor volutpat",
+        "imgUrl": 
+        "https://i.pinimg.com/originals/90/0a/8a/900a8a8217fe1558033769d565dd6f05.jpg"
+    },
+    {
+        "id": "12",
+        "title": "Lost in Translation",
+        "genre": "Drama",
+        "sipnosis": "Donec a tortor volutpat",
+        "year": 2003,
+        "imgUrl": 
+        "https://www.phenomena-experience.com/galeria/Febrero_2017/lost-in-translation-poster.jpg"
     }
 ]

@@ -5,7 +5,7 @@
 
 
 ------------
-This is a React App that shows a list of movies with their title, year, genre and image, using an Api Rest to keep the list and all the modifications.
+This is a React App that shows a list of movies with their title, year, genre and image, using an Api Rest to keep the list and all the modifications. It's a CRUD using Functional Components.
 
 ------------
 
@@ -40,6 +40,13 @@ This is a React App that shows a list of movies with their title, year, genre an
 >Api server: Mock Api
 
 >Api platform: Postman
+
+&nbsp;
+
+#### NON FUNCTIONAL ITEMS 🔘
+>The app must have a Continuous Integration & Continuous Deployment point of view. 
+
+>The app must be all time in production.
 
 &nbsp;
 

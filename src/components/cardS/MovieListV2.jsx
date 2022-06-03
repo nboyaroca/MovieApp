@@ -37,7 +37,7 @@ export function MovieList ( ) {
         movieServices.deleteMovie(id).then((res) => {
             if (res.status === 200) {
                 let filterMovies = movies.filter(movie => movie.id !==id);
-                setMovies(filterMovies );
+                setMovies(filterMovies);
             }
         })
     }

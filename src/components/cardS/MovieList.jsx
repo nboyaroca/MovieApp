@@ -4,6 +4,7 @@ import { createUuid } from "../../utils/createUuid";
 import { MovieCard } from "../card/MovieCard";
 import { MovieForm } from "../form/MovieForm";
 import Loader from "../loader/Loader";
+import Slider from "../slider/Slider";
 
 
 
@@ -31,7 +32,7 @@ export function MovieList ( ) {
 
     //FUNCIÓ PER ESBORRAR UNA PEL·LÍCULA
     const deleteMovie = (id) => {
-        let deleteConfirmed = window.confirm('really delete ?');
+        let deleteConfirmed = window.confirm(`really delete ?`);
         if (!deleteConfirmed) return; //clàusula salvaguarda
         
         movieServices.deleteMovie(id).then((res) => {
@@ -94,7 +95,11 @@ export function MovieList ( ) {
 
         return (
             <section>
-                <button onClick={ openForm } className="add-button"> Add A Film By Yourself,  Click Here! </button>
+              <div className="auxiliar"></div>
+              <Slider/>
+
+                {viewForm ? "" : 
+                <button onClick={ openForm } className="add-button"> Add A Film By Yourself,  Click Here! </button>}
                 {viewForm ? <MovieForm 
                     addMovie={addMovie}
                     editedMovie={editedMovie} 

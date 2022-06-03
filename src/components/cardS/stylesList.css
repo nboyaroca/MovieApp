@@ -1,6 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:100,300,400);
 
-
+.auxiliar {
+    width: 100vw;
+    height: 9.9em;
+    background-color: #c4c1bd;
+}
 
 .film-list{
     
@@ -27,8 +31,7 @@
     font-family: 'lato';
     font-size: x-large;
     cursor: pointer;
-    margin-top: 6.4em;
-
+    /* margin-top: 6.4em; */
 }
 
 .add-button:hover {
