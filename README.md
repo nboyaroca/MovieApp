@@ -1,7 +1,7 @@
 # MOVIE APP  🎬
 ### Your favourite movie list
 
-🔗 https://nboyaroca.github.io/P04-MovieApp/
+🔗 https://nboyaroca.github.io/MovieApp/
 
 
 ------------
@@ -29,19 +29,25 @@ This is a React App that shows a list of movies with their title, year, genre an
 
 # Desktop
 &nbsp;
-[MovieApp-main-Desktop](https://user-images.githubusercontent.com/102729704/171833236-1b7402ad-e92b-48ed-8af8-6690f8ac24ee.jpg)
+>MAIN PAGE
+->![MovieApp-main-Desktop](https://user-images.githubusercontent.com/102729704/171833236-1b7402ad-e92b-48ed-8af8-6690f8ac24ee.jpg)<-
 &nbsp;
 ![MovieApp-main-Desktop2](https://user-images.githubusercontent.com/102729704/171833365-1d4d0d3a-62a5-4e1a-8247-b59f7da3efdb.jpg)
 &nbsp;
+>DETAIL PAGE
 ![MovieApp-page-Desktop](https://user-images.githubusercontent.com/102729704/171833475-49a2a3bb-c8b7-436d-8b97-e8c950f89428.jpg)
 &nbsp;
 # Smartphone
 &nbsp;
+>MAIN PAGE
 ![MovieApp-main-Smartphone](https://user-images.githubusercontent.com/102729704/171834688-8634644b-1ea5-4580-8afb-7aa82327475b.png)
 &nbsp;
 ![MovieApp-main-Smartphone2](https://user-images.githubusercontent.com/102729704/171834710-5b4c741f-e3d4-453e-87ca-478def956dad.png)
 &nbsp;
+>DETAIL PAGE
 ![MovieApp-page-Smartphone](https://user-images.githubusercontent.com/102729704/171834727-120be900-afca-4f82-90cc-d524b18fc223.png)
+
+![foto](/src/images/BTF.jpg "la foto")
 
 &nbsp;
 
