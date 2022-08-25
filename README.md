@@ -38,11 +38,21 @@ This is a React App that shows a list of movies with their title, year, genre an
 ![MovieApp-page-Desktop](https://user-images.githubusercontent.com/102729704/171833475-49a2a3bb-c8b7-436d-8b97-e8c950f89428.jpg)
 &nbsp;
 # Smartphone
+
 &nbsp;
+
+MAIN
+
+&nbsp;
+
 ![MovieApp-main-Smartphone](https://user-images.githubusercontent.com/102729704/186720347-d9a1bb6f-0c91-49df-94d9-2373f58fa8ca.png)
+
 &nbsp;
-![MovieApp-main-Smartphone2](https://user-images.githubusercontent.com/102729704/186720624-59240584-d5f1-4416-a735-4061897393cd.png)
+
+DETAIL
+
 &nbsp;
+
 ![MovieApp-page-Smartphone](https://user-images.githubusercontent.com/102729704/186720718-348feca7-0491-4614-903f-9f6765a81baa.png)
 
 
